@@ -258,20 +258,38 @@ body{
     background-color: #fff;
     margin: 3vh 0;
 }
-#image-div-container{
-    background-color: red;
+.image-div-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+    /* background-color: red; */
     padding: 1vw;
     position: relative;
+    flex-wrap: nowrap;
 }
-.image-div{
-    height: 33vw;
-    width: 24vw ;
-    overflow: hidden;
+.image-div , .image-div2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+    /* background-color: red; */
+    padding: 1vw;
+    position: relative;
+    transform: translateX(cal(-100% - 3vw));
+    /* flex-wrap: nowrap; */
+    width: 25vw ;
+    animation-name: anime2;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* overflow: hidden; */
 }
-#img-div img{
+
+.image-div img, .image-div2 img{
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
    
 }
 #page4{
@@ -465,8 +483,4 @@ position: relative;
     font-weight: 500;
     font-size: 1vw;
     margin-bottom: 3vw;
-}
-._canvas_container{
-   z-index: 99999 !important; 
-   pointer-events: none ;
 }
