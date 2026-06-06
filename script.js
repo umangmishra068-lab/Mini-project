@@ -103,11 +103,12 @@ document.addEventListener("mousemove", function (dets) {
 // Video Cursor + Controls
 const videoContainer = document.querySelector("#video-container");
 const video = document.querySelector("#video-container video");
+const img = document.querySelector("#video-container img");
 
 videoContainer.addEventListener("mousemove", function (dets) {
   gsap.to("#video-cursor", {
-    x: dets.x - 570,
-    y: dets.y - 300,
+    x: dets.clientX - 570,
+    y: dets.clientY - 300,
     duration: 0.3
   });
 });
@@ -120,12 +121,14 @@ videoContainer.addEventListener("click", function () {
     setTimeout(() => {
         if (clickCount === 1) {
             // Single click → play
-            video.play();
+            video.play("/project video.mp4");
             video.style.opacity = 1;
+            img.style.opacity = 0;
         } else if (clickCount === 2) {
             // Double click → pause
-            video.pause();
+            video.pause("./project video.mp4");
             video.style.opacity = 0;
+            img.style.opacity = 1;
         }
 
         clickCount = 0;
