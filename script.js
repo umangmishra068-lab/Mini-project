@@ -131,16 +131,7 @@ videoContainer.addEventListener("click", function () {
         clickCount = 0;
     }, 250);
 });
-// videoContainer.addEventListener('click', function () {
-//   video.play();
-//   video.style.opacity = 1;
-// });
 
-// videoContainer.addEventListener('dblclick', function () {
-//     cleanTimeout(clickTimer);
-//   video.pause();
-//   video.style.opacity = 0;
-// });
 
 // Shery Animation
 function sheryAnimation() {
