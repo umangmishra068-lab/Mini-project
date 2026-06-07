@@ -104,14 +104,15 @@ document.addEventListener("mousemove", function (dets) {
 const videoContainer = document.querySelector("#video-container");
 const video = document.querySelector("#video-container video");
 const img = document.querySelector("#video-container img");
+const playIcon = document.querySelector("#video-cursour");
 
-videoContainer.addEventListener("mousemove", function (dets) {
-  gsap.to("#video-cursor", {
-    x: dets.clientX - 570,
-    y: dets.clientY - 300,
-    duration: 0.3
-  });
-});
+// videoContainer.addEventListener("mousemove", function (dets) {
+//   gsap.to("#video-cursour", {
+//     x: dets.clientX - 570,
+//     y: dets.clientY - 320,
+//     duration: 0.3
+//   });
+// });
  
 let clickCount = 0;
 
@@ -124,6 +125,7 @@ videoContainer.addEventListener("click", function () {
             video.play("/project video.mp4");
             video.style.opacity = 1;
             img.style.opacity = 0;
+            playIcon.style.opacity = 0;
         } else if (clickCount === 2) {
             // Double click → pause
             video.pause("./project video.mp4");

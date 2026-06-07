@@ -1,16 +1,10 @@
 @font-face {
-    font-family: "Plain Light";
+    font-family: "plain-regular";
     src: url("/fonts/Plain-Light.ttf");
 }
 @font-face {
-    font-family: "Silk Sarif";
-    src: url("/fonts/Silk-Sarif.ttf");
-}@font-face {
-    font-family: "Silk Serif";
-    src: url("/fonts/Silk-Serif.ttf");
-}@font-face{
-    font-family: "plain light italic";
-    src: url("/fonts/Plain-Light-Italic.ttf");
+    font-family: "silkserif-lightitalic";
+    src: url("./silkserif/");
 }
 *{ padding: 0;
     margin: 0;
@@ -290,6 +284,7 @@ body{
     position: absolute;
     top: -10%;
     left: 80%;
+    opacity: 1;
     z-index: 999;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -400,8 +395,8 @@ body{
                 transform: translateX(0);
     }
     to{
-        -webkit-transform: translateX(-110%);
-                transform: translateX(-110%);
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
 }}
 @keyframes slide {
     from{
@@ -409,8 +404,8 @@ body{
                 transform: translateX(0);
     }
     to{
-        -webkit-transform: translateX(-110%);
-                transform: translateX(-110%);
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
 }}
 #page4{
     min-height: 100vh;
@@ -654,35 +649,82 @@ position: relative;
     font-size: 1vw;
     margin-bottom: 3vw;
 }
+@media (max-width: 670px) {
 
-@media (max-width: 600px) {
-  /* Cursor */
+  /* ── Loader ── */
+  #loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: #0B0B0B;
+    padding: 25vh 10vw;
+  }
+
+  .line {
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3vw;
+  }
+
+  .line1-part1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+  }
+
+  .line1-part1 h5,
+  .line1-part1 h6 {
+    font-size: 6vw;
+    font-weight: 100;
+    font-family: 'silk sarif';
+  }
+
+  .line1-part1 h5 {
+    width: 7vw;
+    text-align: right;
+  }
+
+  .line h1 {
+    font-size: 9.7vw;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  .line h2 {
+    display: none;
+  }
+
+  /* ── Cursor ── */
   #crsr {
     display: none;
   }
 
-  /* Page 1 */
+  /* ── Page 1 ── */
   #page1 {
-    height: 65vh;
+    
+    height: 68vh;
     width: 100vw;
     background-color: #151515;
-    padding-top: 8px;
+    padding-top: 11vh;
+    padding-bottom: 0vh;
+    
   }
 
   #page1 #nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
     padding: 5.4vw 5.5vw;
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 100;
+    background-color: #151515;
   }
 
   #nav svg {
@@ -691,39 +733,37 @@ position: relative;
 
   #nav-part2 {
     display: none;
-    gap: 3vw;
   }
 
-  #nav-part2 h4 {
-    font-size: 0.8vw;
-    font-weight: 500;
-  }
-
-  /* Hero Section */
+  /* ── Hero ── */
   .hero {
-    width: 72%;
-    margin-left: 6%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
+    width: 90%;
+    margin-left: 5%;
     height: fit-content;
     overflow-y: hidden;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 10vw;
+    
   }
 
   .hero:nth-child(2) {
-    margin-top: 16vh;
+    margin-top: 8vh;
   }
 
   .hero h1 {
-    font-size: 12vw;
+    font-size: 13vw;
     font-weight: 600;
     text-transform: uppercase;
-    line-height: 12vw;
+    line-height: 14vw;
+  }
+
+  .hero h2 {
+    font-size: 10vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 14vw;
   }
 
   #hero1::before {
@@ -731,23 +771,17 @@ position: relative;
     position: absolute;
     font-size: 6vw;
     font-weight: 100;
-    left: 5%;
-    top: 17%;
-    font-family: "silf serif";
+    left: 7%;
+    top: 22%;
+    font-family: "silk serif";
   }
 
-  .hero h2 {
-    font-size: 8.7vw;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 13vw;
-  }
-
-  /* Page 2 */
+  /* ── Page 2 ── */
   #page2 {
     height: 60vh;
     width: 100vw;
-    padding-top: 5vh;
+    padding-top: 0vh;
+    padding-bottom: 5vh;
     position: relative;
     background-color: #151515;
   }
@@ -762,21 +796,18 @@ position: relative;
   #video-container video {
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    object-fit: cover;
   }
 
   #video-container img {
     position: absolute;
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     top: 0;
   }
 
-  #video-cursor {
+  #video-cursour {
     background-color: #FFA63D;
     height: 20vw;
     width: 20vw;
@@ -785,43 +816,34 @@ position: relative;
     top: 50%;
     left: 50%;
     z-index: 999;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
   }
 
-  #video-cursor i {
-    font-size: 3vw;
+  #video-cursour i {
+    font-size: 6vw;
     color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
-  /* Page 3 */
+  /* ── Page 3 ── */
   #page3 {
-    min-height: 60vh;
+    min-height: auto;
     width: 100vw;
     background-color: #151515;
     position: relative;
-    padding: 5vh 2vw;
+    padding: 5vh 4vw;
     margin-bottom: 0;
   }
 
-  #page3 .underline {
-    margin-left: 18%;
+  #page3 h1 {
+    font-size: 11vw;
+    margin-left: 15%;
   }
 
   #page3 h1::before {
@@ -831,28 +853,58 @@ position: relative;
     top: 34%;
   }
 
+  #page3 .underline {
+    margin-left: 18%;
+  }
+
+  /* ── Image carousel — keep marquee, fix sizing ── */
+  .image-div-container {
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: 3vh;
+  }
+
+  .image-track {
+    display: flex;
+    flex-wrap: nowrap;        /* keep marquee horizontal */
+    height: 35vh;
+    width: max-content;
+    animation-name: slide;
+    animation-duration: 24s; /* slower so images are actually visible */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
   .image-div {
-    width: 60vw;
-    height: 40vh;
+    flex-shrink: 0;           /* keep individual cards from collapsing */
+    width: 70vw;
+    height: 100%;
     margin-left: 4vw;
+    overflow: hidden;
+    border-radius: 20px;
   }
 
-  #page3 h1 {
-    font-size: 10vw;
-    margin-left: 20%;
+  .image-div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
-  /* Page 4 */
+  /* ── Page 4 ── */
   #page4 {
-    height: 60vh;
+    height: auto;
+    min-height: auto;
     width: 100vw;
     position: relative;
     background-color: #151515;
-    padding: 10vh 4vw;
+    padding: 8vh 5vw;
   }
 
   #page4-content {
-    width: 100vw;
+    width: 100%;
     margin-left: 0;
   }
 
@@ -861,6 +913,8 @@ position: relative;
     text-transform: uppercase;
     font-weight: 600;
     position: relative;
+    margin-left: 15%;
+    
   }
 
   #page4-content h1::before {
@@ -868,73 +922,63 @@ position: relative;
     position: absolute;
     font-size: 5.7vw;
     font-weight: 100;
-    left: -23%;
+    left: -20%;
     top: 24%;
-    font-family: "silf serif";
+    font-family: "silkserif";
   }
 
   #page4-content .underline {
     height: 2px;
     width: 100%;
     background-color: #fff;
-    margin: 7vh 0 10vw 0;
+    margin-bottom: 5vh;
   }
 
   #page4-content #A1 {
     height: 2px;
     width: 100%;
     background-color: #fff;
-    margin-top: 1vh;
+    margin-top: 8vh;
   }
 
   #page4-content > p {
-    margin-bottom: 3vw;
-    font-size: 5.05vw;
+    margin-bottom: 5vw;
+    font-size: 4.5vw;
     width: 100%;
   }
 
   #page4-flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 
   #page4-flex img {
     width: 100%;
-    margin: 5vw 0 8vw 0;
+    height: auto;
+    margin: 5vw 0;
   }
 
   #page4-flex p {
-    font-size: 2.5vw;
+    font-size: 3.5vw;
     width: 100%;
     margin-bottom: 5vw;
   }
 
   #page4-bluediv {
-    height: 100%;
-    width: 90%;
+    height: fit-content;
+    width: 100%;
     padding: 5vw;
-    padding-bottom: 15vw;
     background-color: #3F7DF4;
     position: relative;
     margin-left: 0;
-    top: -30%;
+    top: 0;
+    margin-top: 5vw;
   }
 
   .blue-div-elem {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: flex-start;
+    justify-content: space-between;
     padding: 4.5vw 0;
     border-bottom: 2px solid #ffffff6d;
   }
@@ -948,13 +992,13 @@ position: relative;
     width: 50%;
   }
 
-  /* Page 5 */
+  /* ── Page 5 ── */
   #page5 {
-    height: 100vh;
+    min-height: auto;
     width: 100vw;
-    padding-top: 100vh;
+    padding: 8vw 0;
     position: relative;
-    margin-top: 20vh;
+    margin-top: 5vh;
   }
 
   .elem,
@@ -966,27 +1010,27 @@ position: relative;
 
   .elem h1,
   .elem2 h1 {
-    font-size: 10vw;
+    font-size: 11vw;
     text-transform: uppercase;
   }
 
-  /* Footer */
+  /* ── Footer ── */
   #footer {
-    height: 50vh;
+    height: auto;
+    min-height: auto;
     width: 100%;
     position: relative;
-    padding-left: 5vw;
-    padding-right: 2vw;
-    margin-top: 40vh;
+    padding: 6vh 5vw;
+    margin-top: 5vh;
   }
 
   #footer h1 {
-    font-size: 10.5vw;
+    font-size: 11vw;
     text-transform: uppercase;
     font-weight: 600;
-    width: 100vw;
+    width: 100%;
     position: relative;
-    margin-left: 12vw;
+    margin-left: 14vw;
   }
 
   #footer h1::before {
@@ -994,9 +1038,9 @@ position: relative;
     position: absolute;
     font-size: 6.7vw;
     font-weight: 100;
-    left: -13%;
+    left: -15%;
     top: 34%;
-    font-family: "silf serif";
+    font-family: "silk serif";
   }
 
   .underline {
@@ -1006,38 +1050,35 @@ position: relative;
   }
 
   #footer-div {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     padding-top: 3vw;
     margin-bottom: 3vw;
+    
+    gap: 4vw;
   }
 
   #footer-div h6 {
     font-size: 4vw;
-    margin-bottom: 3vw;
+    margin-bottom: 2vw;
   }
 
   #box {
-    width: 70%;
+    width: 100%;
     margin-bottom: 5vw;
   }
 
   #footer-div h5 {
-    font-size: 2.4vw;
-    margin: 0.2vh 0;
+    font-size: 3.5vw;
+    margin: 0.5vh 0;
     font-weight: 500;
   }
 
   #footer > h5 {
     font-weight: 500;
-    font-size: 3vw;
-    margin-bottom: 0;
+    font-size: 3.5vw;
+    margin-bottom: 3vw;
   }
 }
